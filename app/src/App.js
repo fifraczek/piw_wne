@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import MyNavbar from './navbar/MyNavbar';
 import Wordcloud from './charts/Wordcloud';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 class App extends Component {
 
@@ -21,7 +22,9 @@ class App extends Component {
     return (      
       <div className="App">
       <MyNavbar/>
-      {this.state.loaded ? <Wordcloud data={this.state.data} /> : ''}
+      <Router>
+        <Route path="/wordcloud" render={() => <Wordcloud data={this.state.data}/>} />
+      </Router>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, MenuItem } from 'react-bootstrap';
 
 export default class App extends Component {
     render() {
@@ -7,22 +7,16 @@ export default class App extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#home">React-Bootstrap</a>
+              <a href="/">Przetwarzanie i wizualizacja danych</a>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav>
-            <NavItem eventKey={1} href="#">
-              Link
-            </NavItem>
-            <NavItem eventKey={2} href="#">
-              Link
-            </NavItem>
-            <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}>Action</MenuItem>
-              <MenuItem eventKey={3.2}>Another action</MenuItem>
-              <MenuItem eventKey={3.3}>Something else here</MenuItem>
+            <NavDropdown title="Dane ogólne" id="basic-nav-dropdown">
+              <MenuItem href="wordcloud">Słowa kluczowe</MenuItem>
               <MenuItem divider />
-              <MenuItem eventKey={3.4}>Separated link</MenuItem>
+              <MenuItem href="decades">Dekady</MenuItem>
+              <MenuItem href="years">Lata</MenuItem>
+              <MenuItem href="genres">Gatunki</MenuItem>
             </NavDropdown>
           </Nav>
         </Navbar>);

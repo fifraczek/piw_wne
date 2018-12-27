@@ -25,13 +25,8 @@ const rotate = word => word.value % 360;
 
 class Wordcloud extends Component {
     
-    constructor(props) {
-        super(props);
-        this.state = this.prepareState(props);
-    }
-
-    prepareState(props) {
-        return {data: _.chain(props.data)
+    prepareData(props) {
+        return _.chain(props.data)
             .map('keywords')
             .map(mapToJsonString)
             .map(array => _.map(array, 'name'))
@@ -41,13 +36,12 @@ class Wordcloud extends Component {
             .map((v,k) => {return {[WORD_KEY]: k, [WORD_COUNT_KEY]: v};})
             .sortBy(WORD_COUNT_KEY)
             .takeRight(WORD_CLOUD_LIMIT)
-            .value()};
+            .value();
     }
 
     render() {
-        console.log(this.state.data);
         return <WordCloud
-          data={this.state.data}
+          data={this.prepareData(this.props)}
           fontSizeMapper={fontSizeMapper}
           rotate={rotate}
         />;
