@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 import MyNavbar from './navbar/MyNavbar';
 import Wordcloud from './charts/Wordcloud';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import Decades from './charts/Decades';
 
 class App extends Component {
 
@@ -23,7 +24,10 @@ class App extends Component {
       <div className="App">
       <MyNavbar/>
       <Router>
-        <Route path="/wordcloud" render={() => <Wordcloud data={this.state.data}/>} />
+        <div>
+          <Route path="/wordcloud" render={() => <Wordcloud data={this.state.data}/>} />
+          <Route path="/decades" render={() => <Decades data={this.state.data}/>} />
+        </div>
       </Router>
       </div>
     );
