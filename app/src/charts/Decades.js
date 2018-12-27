@@ -7,7 +7,7 @@ export default class Decades extends Component {
     prepareData() {
         return _.chain(this.props.data)
             .map('release_date')
-            .map(o => _.round(new Date(o).getFullYear(), -1))
+            .map(o => _.floor(new Date(o).getFullYear(), -1))
             .groupBy(o => o)
             .mapValues('length')
             .value();
