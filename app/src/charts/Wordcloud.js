@@ -25,8 +25,8 @@ const rotate = word => word.value % 360;
 
 class Wordcloud extends Component {
     
-    prepareData(props) {
-        return _.chain(props.data)
+    prepareData() {
+        return _.chain(this.props.data)
             .map('keywords')
             .map(mapToJsonString)
             .map(array => _.map(array, 'name'))
@@ -41,7 +41,7 @@ class Wordcloud extends Component {
 
     render() {
         return <WordCloud
-          data={this.prepareData(this.props)}
+          data={this.prepareData()}
           fontSizeMapper={fontSizeMapper}
           rotate={rotate}
         />;
