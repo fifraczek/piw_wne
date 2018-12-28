@@ -1,20 +1,7 @@
 import React, { Component } from 'react';
 import WordCloud from 'react-d3-cloud';
 import _ from 'lodash';
-
-const mapToJsonString = text => {
-    try {
-        return JSON.parse(
-            text.replace(/'id'/g, '"id"')
-            .split(/'name'/g).join('"name"')
-            .split(/ '/g).join(' "')
-            .split(/ \\"/g).join(' "')
-            .split(/'}/g).join('"}')
-            .split(/\\"}/g).join('"}'));
-    } catch {
-        return {};
-    }
-}
+import {stringToJson} from '../utils/stringUtils';
 
 const WORD_COUNT_KEY = 'value';
 const WORD_KEY = 'text';
@@ -28,7 +15,7 @@ class Wordcloud extends Component {
     prepareData() {
         return _.chain(this.props.data)
             .map('keywords')
-            .map(mapToJsonString)
+            .map(stringToJson)
             .map(array => _.map(array, 'name'))
             .flatten()
             .groupBy(o => o)
