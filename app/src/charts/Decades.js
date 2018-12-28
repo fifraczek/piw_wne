@@ -16,14 +16,14 @@ export default class Decades extends Component {
     render() {
         const data = this.prepareData();
         return <Plot
-          data={[
-            {
-              values: _.values(data),
-              labels: _.keys(data),
-              type: 'pie'
-            }
-          ]}
-          layout={ {width: 1320, height: 840, title: 'Ilość filmów wydanych w dekadach:'} }
+            data={[
+                {
+                    values: _.values(data),
+                    labels: _.keys(data),
+                    type: 'pie'
+                }
+            ]}
+            layout={{ width: 1320, height: 840, title: 'Ilość filmów wydanych w dekadach:' }}
         />;
     }
 }

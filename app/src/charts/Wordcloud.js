@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import WordCloud from 'react-d3-cloud';
 import _ from 'lodash';
-import {stringToJson} from '../utils/stringUtils';
+import { stringToJson } from '../utils/stringUtils';
 
 const WORD_COUNT_KEY = 'value';
 const WORD_KEY = 'text';
@@ -11,7 +11,7 @@ const fontSizeMapper = word => Math.log2(word.value) * 5;
 const rotate = word => word.value % 360;
 
 class Wordcloud extends Component {
-    
+
     prepareData() {
         return _.chain(this.props.data)
             .map('keywords')
@@ -20,7 +20,7 @@ class Wordcloud extends Component {
             .flatten()
             .groupBy(o => o)
             .mapValues('length')
-            .map((v,k) => {return {[WORD_KEY]: k, [WORD_COUNT_KEY]: v};})
+            .map((v, k) => { return { [WORD_KEY]: k, [WORD_COUNT_KEY]: v }; })
             .sortBy(WORD_COUNT_KEY)
             .takeRight(WORD_CLOUD_LIMIT)
             .value();
@@ -28,9 +28,9 @@ class Wordcloud extends Component {
 
     render() {
         return <WordCloud
-          data={this.prepareData()}
-          fontSizeMapper={fontSizeMapper}
-          rotate={rotate}
+            data={this.prepareData()}
+            fontSizeMapper={fontSizeMapper}
+            rotate={rotate}
         />;
     }
 }
