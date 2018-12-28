@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, MenuItem, NavItem } from 'react-bootstrap';
 
 export default class App extends Component {
     render() {
@@ -18,6 +18,7 @@ export default class App extends Component {
               <MenuItem href="years">Lata</MenuItem>
               <MenuItem href="genres">Gatunki</MenuItem>
             </NavDropdown>
+            <NavItem href="rates">Oceny</NavItem>
           </Nav>
         </Navbar>);
     }

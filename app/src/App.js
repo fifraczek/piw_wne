@@ -6,6 +6,7 @@ import Wordcloud from './charts/Wordcloud';
 import Decades from './charts/Decades';
 import Genres from './charts/Genres';
 import Years from './charts/Years';
+import Rates from './charts/Rates';
 
 class App extends Component {
 
@@ -31,6 +32,7 @@ class App extends Component {
           <Route path="/decades" render={() => <Decades data={this.state.data}/>} />
           <Route path="/genres" render={() => <Genres data={this.state.data}/>} />
           <Route path="/years" render={() => <Years data={this.state.data}/>} />
+          <Route path="/rates" render={() => <Rates data={this.state.data}/>} />
         </div>
       </Router>
       </div>
