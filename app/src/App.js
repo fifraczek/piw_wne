@@ -4,6 +4,8 @@ import './App.css';
 import MyNavbar from './navbar/MyNavbar';
 import Wordcloud from './charts/Wordcloud';
 import Decades from './charts/Decades';
+import Genres from './charts/Genres';
+import Years from './charts/Years';
 
 class App extends Component {
 
@@ -27,6 +29,8 @@ class App extends Component {
         <div>
           <Route path="/wordcloud" render={() => <Wordcloud data={this.state.data}/>} />
           <Route path="/decades" render={() => <Decades data={this.state.data}/>} />
+          <Route path="/genres" render={() => <Genres data={this.state.data}/>} />
+          <Route path="/years" render={() => <Years data={this.state.data}/>} />
         </div>
       </Router>
       </div>
