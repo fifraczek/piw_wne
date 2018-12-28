@@ -41,7 +41,7 @@ data final;
    set keywords;
    set links;
    set ratingsAvg;
-   keep id title keywords budget genres release_date revenue imdbid rating_avg rating_count;
+   keep id title keywords budget genres release_date revenue imdbid rating_avg rating_count runtime;
 run;
 
 /*  
