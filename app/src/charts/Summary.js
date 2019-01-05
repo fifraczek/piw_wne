@@ -44,6 +44,7 @@ export default class Summary extends Component {
             .sortBy(['rate_count', 'revenue'])
             .filter(o => (o.rate_count < 1000 && o.revenue > 0))
             .takeRight(MOVIES_COUNT)
+            .sortBy('rate_avg')
             .map(buildDataSeriesObject)
             .value();
     }
