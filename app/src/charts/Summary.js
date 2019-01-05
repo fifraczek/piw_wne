@@ -75,8 +75,13 @@ export default class Summary extends Component {
             }
         };
 
-        return <div style={{ margin: '0 auto', width: '1320px' }}>
-            <Chart series={this.prepareSeries()} options={options} type='bubble' width={1320} height={840} />
+        return <div style={{ margin: '0 auto', width: this.props.width + 'px' }}>
+            <Chart
+                series={this.prepareSeries()}
+                options={options}
+                type='bubble'
+                width={this.props.width}
+                height={this.props.height} />
         </div>;
     }
 }

@@ -22,7 +22,7 @@ export default class Years extends Component {
                     type: 'scatter'
                 }
             ]}
-            layout={{ width: 1320, height: 840, title: 'Ilość filmów rocznie:' }}
+            layout={{ width: this.props.width, height: this.props.height, title: 'Ilość filmów rocznie:' }}
         />;
     }
 }

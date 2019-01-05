@@ -22,19 +22,27 @@ class App extends Component {
         };
     }
 
+    get globalOptions() {
+        return {
+            data: this.state.data,
+            height: 700,
+            width: 1000
+        };
+    }
+
     render() {
         return (
             <div className="App">
                 <MyNavbar />
                 <Router>
                     <div>
-                        <Route path="/" exact render={() => <Summary data={this.state.data} />} />
-                        <Route path="/summary" exact render={() => <Summary data={this.state.data} />} />
-                        <Route path="/wordcloud" exact render={() => <Wordcloud data={this.state.data} />} />
-                        <Route path="/decades" exact render={() => <Decades data={this.state.data} />} />
-                        <Route path="/genres" exact render={() => <Genres data={this.state.data} />} />
-                        <Route path="/years" exact render={() => <Years data={this.state.data} />} />
-                        <Route path="/rates" exact render={() => <Rates data={this.state.data} />} />
+                        <Route path="/" exact render={() => <Summary {...this.globalOptions} />} />
+                        <Route path="/summary" exact render={() => <Summary {...this.globalOptions} />} />
+                        <Route path="/wordcloud" exact render={() => <Wordcloud {...this.globalOptions} />} />
+                        <Route path="/decades" exact render={() => <Decades {...this.globalOptions} />} />
+                        <Route path="/genres" exact render={() => <Genres {...this.globalOptions} />} />
+                        <Route path="/years" exact render={() => <Years {...this.globalOptions} />} />
+                        <Route path="/rates" exact render={() => <Rates {...this.globalOptions} />} />
                     </div>
                 </Router>
             </div>

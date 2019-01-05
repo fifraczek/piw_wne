@@ -23,7 +23,7 @@ export default class Decades extends Component {
                     type: 'pie'
                 }
             ]}
-            layout={{ width: 1320, height: 840, title: 'Ilość filmów wydanych w dekadach:' }}
+            layout={{ width: this.props.width, height: this.props.height, title: 'Ilość filmów wydanych w dekadach:' }}
         />;
     }
 }

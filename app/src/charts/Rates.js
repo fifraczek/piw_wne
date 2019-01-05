@@ -79,7 +79,7 @@ export default class Rates extends Component {
                         marker: { size: 12 }
                     }
                 ]}
-                layout={{ width: 1320, height: 840 }}
+                layout={{ width: this.props.width, height: this.props.height}}
             />
         </div>;
     }

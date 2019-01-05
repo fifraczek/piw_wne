@@ -27,7 +27,7 @@ export default class Genres extends Component {
                     type: 'pie'
                 }
             ]}
-            layout={{ width: 1320, height: 840, title: 'Ilość filmów poszczególnych gatunków:' }}
+            layout={{ width: this.props.width, height: this.props.height, title: 'Ilość filmów poszczególnych gatunków:' }}
         />;
     }
 }
