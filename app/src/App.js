@@ -29,12 +29,12 @@ class App extends Component {
                 <Router>
                     <div>
                         <Route path="/" exact render={() => <Summary data={this.state.data} />} />
-                        <Route path="/summary" render={() => <Summary data={this.state.data} />} />
-                        <Route path="/wordcloud" render={() => <Wordcloud data={this.state.data} />} />
-                        <Route path="/decades" render={() => <Decades data={this.state.data} />} />
-                        <Route path="/genres" render={() => <Genres data={this.state.data} />} />
-                        <Route path="/years" render={() => <Years data={this.state.data} />} />
-                        <Route path="/rates" render={() => <Rates data={this.state.data} />} />
+                        <Route path="/summary" exact render={() => <Summary data={this.state.data} />} />
+                        <Route path="/wordcloud" exact render={() => <Wordcloud data={this.state.data} />} />
+                        <Route path="/decades" exact render={() => <Decades data={this.state.data} />} />
+                        <Route path="/genres" exact render={() => <Genres data={this.state.data} />} />
+                        <Route path="/years" exact render={() => <Years data={this.state.data} />} />
+                        <Route path="/rates" exact render={() => <Rates data={this.state.data} />} />
                     </div>
                 </Router>
             </div>
