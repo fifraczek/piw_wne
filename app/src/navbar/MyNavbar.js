@@ -11,6 +11,7 @@ export default class App extends Component {
                     </Navbar.Brand>
                 </Navbar.Header>
                 <Nav>
+                    <NavItem href="summary">Podsumowanie</NavItem>
                     <NavDropdown title="Dane ogólne" id="basic-nav-dropdown">
                         <MenuItem href="wordcloud">Słowa kluczowe</MenuItem>
                         <MenuItem divider />

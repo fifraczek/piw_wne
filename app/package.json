@@ -3,9 +3,13 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@blueprintjs/core": "^3.10.0",
+        "apexcharts": "^2.5.1",
+        "chroma-js": "^2.0.2",
         "lodash": "^4.17.11",
         "plotly.js": "^1.43.1",
         "react": "^16.6.0",
+        "react-apexcharts": "^1.2.1",
         "react-bootstrap": "^0.32.4",
         "react-d3-cloud": "^0.7.0",
         "react-dom": "^16.6.0",

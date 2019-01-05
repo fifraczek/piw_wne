@@ -7,6 +7,7 @@ import Decades from './charts/Decades';
 import Genres from './charts/Genres';
 import Years from './charts/Years';
 import Rates from './charts/Rates';
+import Summary from './charts/Summary';
 
 class App extends Component {
 
@@ -27,6 +28,8 @@ class App extends Component {
                 <MyNavbar />
                 <Router>
                     <div>
+                        <Route path="/" exact render={() => <Summary data={this.state.data} />} />
+                        <Route path="/summary" render={() => <Summary data={this.state.data} />} />
                         <Route path="/wordcloud" render={() => <Wordcloud data={this.state.data} />} />
                         <Route path="/decades" render={() => <Decades data={this.state.data} />} />
                         <Route path="/genres" render={() => <Genres data={this.state.data} />} />
